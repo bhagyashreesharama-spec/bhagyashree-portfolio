@@ -1,12 +1,86 @@
-function openMenu(){
+// Typing Effect
 
-let nav = document.getElementById("nav");
+const text = [
+"Technology Explorer 💻",
+"AI Learner 🤖",
+"Web Developer 🌐",
+"Cybersecurity Enthusiast 🔐",
+"Japanese Language Learner 🌸"
+];
 
-if(nav.style.display === "block"){
-    nav.style.display = "none";
+
+let index = 0;
+let charIndex = 0;
+
+const typing = document.querySelector(".hero h2");
+
+
+function typeEffect(){
+
+if(charIndex < text[index].length){
+
+typing.textContent += text[index].charAt(charIndex);
+
+charIndex++;
+
+setTimeout(typeEffect,100);
+
 }
+
 else{
-    nav.style.display = "block";
+
+setTimeout(()=>{
+
+typing.textContent="";
+
+charIndex=0;
+
+index++;
+
+if(index >= text.length){
+
+index=0;
+
+}
+
+typeEffect();
+
+
+},1500);
+
+
 }
 
 }
+
+
+typing.textContent="";
+
+typeEffect();
+
+
+
+
+
+// Button smooth effect
+
+const buttons=document.querySelectorAll("button");
+
+
+buttons.forEach(btn=>{
+
+btn.addEventListener("mouseenter",()=>{
+
+btn.style.transform="scale(1.08)";
+
+});
+
+
+btn.addEventListener("mouseleave",()=>{
+
+btn.style.transform="scale(1)";
+
+});
+
+
+});
