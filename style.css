@@ -12,14 +12,96 @@ scroll-behavior:smooth;
 
 
 body{
-background:#050505;
+
+background:#050008;
 color:white;
 overflow-x:hidden;
+
+}
+
+
+/* FLOATING EMOJIS */
+
+.floating span{
+
+position:fixed;
+font-size:35px;
+opacity:.7;
+z-index:-1;
+animation:float 8s infinite ease-in-out;
+
+}
+
+
+.floating span:nth-child(1){
+left:5%;
+top:20%;
+}
+
+.floating span:nth-child(2){
+right:10%;
+top:15%;
+animation-delay:2s;
+}
+
+.floating span:nth-child(3){
+left:15%;
+bottom:20%;
+animation-delay:4s;
+}
+
+.floating span:nth-child(4){
+right:15%;
+bottom:25%;
+animation-delay:1s;
+}
+
+.floating span:nth-child(5){
+left:45%;
+top:10%;
+animation-delay:3s;
+}
+
+.floating span:nth-child(6){
+right:40%;
+bottom:10%;
+animation-delay:5s;
+}
+
+.floating span:nth-child(7){
+left:30%;
+bottom:15%;
+animation-delay:2s;
+}
+
+.floating span:nth-child(8){
+right:30%;
+top:40%;
+animation-delay:4s;
+}
+
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-40px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
 }
 
 
 
+
 /* HEADER */
+
 
 header{
 
@@ -27,15 +109,16 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 
-padding:20px 8%;
-
-background:rgba(10,10,10,0.8);
+padding:25px 8%;
 
 position:sticky;
 top:0;
-z-index:1000;
+
+background:rgba(5,0,8,.8);
 
 backdrop-filter:blur(10px);
+
+z-index:10;
 
 }
 
@@ -44,41 +127,32 @@ backdrop-filter:blur(10px);
 
 font-size:28px;
 font-weight:bold;
-color:#b026ff;
+color:#c026ff;
 
 }
-
 
 
 nav a{
 
 color:white;
 text-decoration:none;
-margin:0 15px;
-font-size:16px;
+margin:15px;
 
 }
 
 
 nav a:hover{
 
-color:#b026ff;
+color:#c026ff;
 
 }
 
-
-.menu{
-
-display:none;
-font-size:30px;
-cursor:pointer;
-
-}
 
 
 
 
 /* HERO */
+
 
 .hero{
 
@@ -93,13 +167,13 @@ justify-content:space-around;
 padding:50px 8%;
 
 background:
-radial-gradient(circle at top,#3b0066,#050505 50%);
+radial-gradient(circle,#42006b,#050008 60%);
 
 }
 
 
 
-.hero-content{
+.hero-text{
 
 max-width:600px;
 
@@ -114,9 +188,10 @@ font-size:55px;
 }
 
 
+
 .hero span{
 
-color:#b026ff;
+color:#c026ff;
 
 }
 
@@ -124,31 +199,20 @@ color:#b026ff;
 
 .hero h2{
 
-font-size:35px;
+font-size:32px;
 
 margin:20px 0;
 
-color:#d8b4fe;
+color:#e9b5ff;
 
 }
-
 
 
 .hero p{
 
 font-size:18px;
-
-line-height:1.6;
-
-color:#ccc;
-
-}
-
-
-
-.buttons{
-
-margin-top:30px;
+line-height:1.8;
+color:#ddd;
 
 }
 
@@ -156,13 +220,13 @@ margin-top:30px;
 
 button{
 
-padding:14px 35px;
+padding:15px 35px;
 
 border:none;
 
 border-radius:30px;
 
-background:#b026ff;
+background:#c026ff;
 
 color:white;
 
@@ -170,9 +234,9 @@ font-size:16px;
 
 cursor:pointer;
 
-margin-right:15px;
+box-shadow:0 0 25px #c026ff;
 
-box-shadow:0 0 20px #b026ff;
+margin-top:25px;
 
 }
 
@@ -180,7 +244,7 @@ box-shadow:0 0 20px #b026ff;
 
 button:hover{
 
-transform:scale(1.05);
+transform:scale(1.08);
 
 }
 
@@ -190,48 +254,44 @@ transform:scale(1.05);
 
 background:transparent;
 
-border:2px solid #b026ff;
+border:2px solid #c026ff;
 
 }
 
 
 
 
-/* IMAGE */
+/* ANIME IMAGE */
 
-.hero-image img{
 
-width:350px;
+.anime-box img{
 
-animation:float 3s ease-in-out infinite;
+width:380px;
 
-filter:drop-shadow(0 0 30px #b026ff);
+animation:animeFloat 3s infinite ease-in-out;
+
+filter:drop-shadow(0 0 35px #c026ff);
 
 }
 
 
 
-@keyframes float{
+@keyframes animeFloat{
 
 0%{
-
 transform:translateY(0);
-
 }
 
 50%{
-
-transform:translateY(-20px);
-
+transform:translateY(-25px);
 }
 
 100%{
-
 transform:translateY(0);
-
 }
 
 }
+
 
 
 
@@ -239,24 +299,27 @@ transform:translateY(0);
 
 /* SECTIONS */
 
+
 section{
 
-padding:80px 8%;
+padding:90px 8%;
 
 text-align:center;
 
 }
 
 
+
 section h2{
 
-font-size:35px;
+font-size:40px;
 
-color:#b026ff;
+color:#c026ff;
 
-margin-bottom:30px;
+margin-bottom:40px;
 
 }
+
 
 
 
@@ -266,11 +329,13 @@ max-width:800px;
 
 margin:auto;
 
-line-height:1.7;
+line-height:1.8;
 
 color:#ccc;
 
 }
+
+
 
 
 
@@ -284,28 +349,27 @@ display:flex;
 
 justify-content:center;
 
-gap:25px;
+gap:30px;
 
 flex-wrap:wrap;
-
-margin-top:40px;
 
 }
 
 
 
-.card,.journey{
+.card,
+.journey-card{
 
 
-background:rgba(255,255,255,0.05);
-
-border:1px solid #b026ff;
+width:300px;
 
 padding:30px;
 
-width:280px;
+border-radius:25px;
 
-border-radius:20px;
+background:rgba(255,255,255,.06);
+
+border:1px solid #c026ff;
 
 backdrop-filter:blur(10px);
 
@@ -315,25 +379,26 @@ transition:.4s;
 
 
 
-.card:hover,.journey:hover{
+.card:hover,
+.journey-card:hover{
 
 transform:translateY(-15px);
 
-box-shadow:0 0 30px #b026ff;
+box-shadow:0 0 30px #c026ff;
 
 }
 
 
 
 
-.card h3,.journey h3{
+.card h3,
+.journey-card h3{
 
-color:#d8b4fe;
+color:#e9b5ff;
 
 margin-bottom:15px;
 
 }
-
 
 
 
@@ -345,15 +410,15 @@ margin-bottom:15px;
 
 display:inline-block;
 
-padding:12px 25px;
-
-margin:15px;
-
-background:#b026ff;
+background:#c026ff;
 
 color:white;
 
+padding:12px 25px;
+
 border-radius:30px;
+
+margin:15px;
 
 text-decoration:none;
 
@@ -366,9 +431,9 @@ footer{
 
 padding:25px;
 
-text-align:center;
+background:#100015;
 
-background:#111;
+text-align:center;
 
 color:#aaa;
 
@@ -378,7 +443,9 @@ color:#aaa;
 
 
 
-/* MOBILE RESPONSIVE */
+
+/* MOBILE DESIGN */
+
 
 @media(max-width:768px){
 
@@ -393,34 +460,6 @@ padding:20px;
 nav{
 
 display:none;
-
-position:absolute;
-
-top:70px;
-
-right:20px;
-
-background:#111;
-
-padding:20px;
-
-border-radius:15px;
-
-}
-
-
-nav a{
-
-display:block;
-
-margin:20px;
-
-}
-
-
-.menu{
-
-display:block;
 
 }
 
@@ -452,7 +491,7 @@ font-size:25px;
 
 
 
-.hero-image img{
+.anime-box img{
 
 width:260px;
 
@@ -462,17 +501,17 @@ margin-top:40px;
 
 
 
-button{
+section{
 
-margin:10px;
+padding:60px 20px;
 
 }
 
 
+.card,
+.journey-card{
 
-section{
-
-padding:60px 20px;
+width:90%;
 
 }
 
