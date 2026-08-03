@@ -5,18 +5,14 @@ box-sizing:border-box;
 font-family:'Poppins',Arial,sans-serif;
 }
 
-
 html{
 scroll-behavior:smooth;
 }
 
-
 body{
-
 background:#050008;
 color:white;
 overflow-x:hidden;
-
 }
 
 
@@ -26,9 +22,9 @@ overflow-x:hidden;
 
 position:fixed;
 font-size:35px;
-opacity:.7;
-z-index:-1;
-animation:float 8s infinite ease-in-out;
+opacity:0.8;
+z-index:0;
+animation:float 7s infinite ease-in-out;
 
 }
 
@@ -99,7 +95,6 @@ transform:translateY(0px);
 
 
 
-
 /* HEADER */
 
 
@@ -114,9 +109,9 @@ padding:25px 8%;
 position:sticky;
 top:0;
 
-background:rgba(5,0,8,.8);
+background:rgba(5,0,8,0.85);
 
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 
 z-index:10;
 
@@ -153,7 +148,6 @@ color:#c026ff;
 
 /* HERO */
 
-
 .hero{
 
 min-height:90vh;
@@ -172,13 +166,11 @@ radial-gradient(circle,#42006b,#050008 60%);
 }
 
 
-
 .hero-text{
 
 max-width:600px;
 
 }
-
 
 
 .hero h1{
@@ -188,22 +180,20 @@ font-size:55px;
 }
 
 
-
-.hero span{
+.hero h1 span{
 
 color:#c026ff;
 
 }
 
 
-
 .hero h2{
 
 font-size:32px;
 
-margin:20px 0;
-
 color:#e9b5ff;
+
+margin:20px 0;
 
 }
 
@@ -211,11 +201,16 @@ color:#e9b5ff;
 .hero p{
 
 font-size:18px;
+
 line-height:1.8;
+
 color:#ddd;
 
 }
 
+
+
+/* BUTTON */
 
 
 button{
@@ -234,12 +229,13 @@ font-size:16px;
 
 cursor:pointer;
 
-box-shadow:0 0 25px #c026ff;
-
 margin-top:25px;
 
-}
+box-shadow:0 0 25px #c026ff;
 
+transition:.3s;
+
+}
 
 
 button:hover{
@@ -247,7 +243,6 @@ button:hover{
 transform:scale(1.08);
 
 }
-
 
 
 .outline{
@@ -261,16 +256,32 @@ border:2px solid #c026ff;
 
 
 
-/* ANIME IMAGE */
+/* TECH CIRCLE IMAGE REPLACEMENT */
 
 
-.anime-box img{
+.profile-circle{
 
-width:380px;
+width:350px;
+
+height:350px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:100px;
+
+background:
+radial-gradient(circle,#c026ff,#09000f);
+
+box-shadow:
+0 0 50px #c026ff;
 
 animation:animeFloat 3s infinite ease-in-out;
-
-filter:drop-shadow(0 0 35px #c026ff);
 
 }
 
@@ -295,8 +306,6 @@ transform:translateY(0);
 
 
 
-
-
 /* SECTIONS */
 
 
@@ -307,7 +316,6 @@ padding:90px 8%;
 text-align:center;
 
 }
-
 
 
 section h2{
@@ -321,8 +329,6 @@ margin-bottom:40px;
 }
 
 
-
-
 section p{
 
 max-width:800px;
@@ -334,7 +340,6 @@ line-height:1.8;
 color:#ccc;
 
 }
-
 
 
 
@@ -360,14 +365,13 @@ flex-wrap:wrap;
 .card,
 .journey-card{
 
-
 width:300px;
 
 padding:30px;
 
 border-radius:25px;
 
-background:rgba(255,255,255,.06);
+background:rgba(255,255,255,0.06);
 
 border:1px solid #c026ff;
 
@@ -390,7 +394,6 @@ box-shadow:0 0 30px #c026ff;
 
 
 
-
 .card h3,
 .journey-card h3{
 
@@ -399,6 +402,7 @@ color:#e9b5ff;
 margin-bottom:15px;
 
 }
+
 
 
 
@@ -431,9 +435,9 @@ footer{
 
 padding:25px;
 
-background:#100015;
-
 text-align:center;
+
+background:#100015;
 
 color:#aaa;
 
@@ -443,8 +447,7 @@ color:#aaa;
 
 
 
-
-/* MOBILE DESIGN */
+/* MOBILE RESPONSIVE */
 
 
 @media(max-width:768px){
@@ -464,7 +467,6 @@ display:none;
 }
 
 
-
 .hero{
 
 flex-direction:column;
@@ -482,7 +484,6 @@ font-size:38px;
 }
 
 
-
 .hero h2{
 
 font-size:25px;
@@ -490,22 +491,18 @@ font-size:25px;
 }
 
 
+.profile-circle{
 
-.anime-box img{
+width:250px;
 
-width:260px;
+height:250px;
+
+font-size:70px;
 
 margin-top:40px;
 
 }
 
-
-
-section{
-
-padding:60px 20px;
-
-}
 
 
 .card,
@@ -515,6 +512,12 @@ width:90%;
 
 }
 
+
+section{
+
+padding:60px 20px;
+
+}
 
 
 }
